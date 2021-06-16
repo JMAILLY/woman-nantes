@@ -1,0 +1,52 @@
+// Layout
+$wrapperMax             : 1440px;
+$wrapperMin             : 1250px;
+
+// Font sizes
+$base-font-size         : 16px;
+$line-height            : 1.4;
+$baseline               : 1.5;
+
+// Font stacks
+$font-stack-common      : sans-serif;
+
+// Transitions
+$durationSmall: .5s;
+$duration: .6s;
+$durationIntermediate: .75s;
+$durationLong: 1.2s;
+$easeInSine     : cubic-bezier(0.47, 0, 0.745, 0.715);
+$easeOutSine    : cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeInOutSine  : cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$easeInOutQuart : cubic-bezier(0.77, 0, 0.175, 1);
+$easeOutQuart   : cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOutCubic   : cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeInOutCubic : cubic-bezier(0.645, 0.045, 0.355, 1);
+$easeInOutCirc  : cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeInCirc     : cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$easeInOutQuint : cubic-bezier(0.86, 0, 0.07, 1);
+$easeOutQuint   : cubic-bezier(0.23, 1, 0.32, 1);
+$easeInOutBack  : cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$easeOutBack    : cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeInBack     : cubic-bezier(0.6, -0.28, 0.735, 0.045);
+$easeInOutExpo  : cubic-bezier(1, 0, 0, 1);
+$easeOutExpo    : cubic-bezier(0.19, 1, 0.22, 1);
+
+// Palettes
+$whiteColor      : #ffffff;
+$blackColor      : #000;
+$greyLight       : #f7f7f7;
+$greyColor       : #747474;
+$greenColor      : #15D23B;
+$redColor        : #f00;
+$greyText        : #2d2d2d;
+
+
+// SOCIAL MEDIA COLORS
+$facebook:       #3b5998;
+$googleplus:     #dd4b39;
+$instagram:      #517fa4;
+$linkedin:       #007bb6;
+$pinterest:      #cb2027;
+$twitter:        #0dcfed;
+$youtube:        #b00,

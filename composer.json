@@ -1,0 +1,75 @@
+{
+  "name": "gingerminds/starter-kit",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress Starter Kit - Gingerminds with Bedrocks",
+  "homepage": "https://roots.io/bedrock/",
+  "support": {
+    "issues": "https://github.com/roots/bedrock/issues",
+    "forum": "https://discourse.roots.io/category/bedrock"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "composer/installers": "^1.8",
+    "vlucas/phpdotenv": "^4.1.0",
+    "oscarotero/env": "^1.2.0",
+    "roots/multisite-url-fixer": "^1.1",
+    "roots/wordpress": "^5.5.3",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/contact-form-7": "^5.1.9",
+    "wpackagist-plugin/duplicate-page": "^4.2",
+    "wpackagist-plugin/flamingo": "^2.1",
+    "wpackagist-plugin/hummingbird-performance": "^2.5.1",
+    "wpackagist-plugin/wp-migrate-db" : "^1.0.15",
+    "wpackagist-plugin/inazo-flamingo-automatically-delete-old-messages":"1.0",
+    "wpackagist-plugin/intuitive-custom-post-order": "^3.1",
+    "wpackagist-plugin/jquery-manager": "^1.10",
+    "wpackagist-plugin/login-customizer": "^2.0",
+    "wpackagist-plugin/optimize-images-resizing": "^1.4",
+    "wpackagist-plugin/safe-svg": "^1.9.9",
+    "wpackagist-plugin/tinymce-advanced": "^5.4.0",
+    "wpackagist-plugin/clean-image-filenames": "^1.2.1",
+    "wpackagist-plugin/siteorigin-panels": "^2.11.0",
+    "wpackagist-plugin/so-widgets-bundle": "^1.17.10",
+    "wpackagist-plugin/classic-editor": "^1.5",
+    "wpackagist-plugin/wordpress-seo": "^15.2.1",
+    "wpackagist-plugin/wps-hide-login": "^1.5",
+    "wpackagist-plugin/wp-smushit": "^3.7.1",
+    "wpackagist-plugin/wpfront-user-role-editor": "^2.14"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5.4",
+    "roave/security-advisories": "dev-master"
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "process-timeout": 0
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}

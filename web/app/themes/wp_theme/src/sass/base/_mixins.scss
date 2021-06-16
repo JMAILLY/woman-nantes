@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Components / MIXINS
+   ========================================================================== */
+
+  /*********************
+    BREAKPOINTS RESPONSIVE LAYOUT
+    *********************/
+
+  @mixin breakpoint($point) {
+    @if $point == largedesktop {
+      @media (min-width: 1800px) { @content ; }
+    }@else if $point == mediumdesktop {
+      @media (min-width: 1500px) { @content ; }
+    }@else if $point == desktop {
+      @media (min-width: 1360px) { @content ; }
+    }@else if $point == laptop {
+      @media (min-width: 1200px) { @content ; }
+    }@else if $point == tablethor {
+      @media (min-width: 1000px) { @content ; }
+    }@else if $point == tablet {
+      @media (min-width: 760px) { @content ; }
+    }@else if $point == phablet {
+      @media (min-width: 576px)  { @content ; }
+    }@else if $point == mobileonly {
+      @media (max-width: 576px)  { @content ; }
+    }@else if $point == smallMobile {
+      @media (max-width: 325px)  { @content ; }
+    }@else {
+      @media (min-width: $point)  { @content ; }
+    }
+  }
+
+  // Wrapper
+  @mixin wrapper($type: 'max') {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @if $type == 'max' {
+      max-width: $wrapperMax;
+    }@else {
+      max-width: $wrapperMin;
+    }
+  }
+
+  // Transition
+  @mixin transition($transition...) {
+    transition: $transition;
+  }
+  @mixin transition-property($property...) {
+    transition-property: $property;
+  }
+  @mixin transition-duration($duration...) {
+    transition-property: $duration;
+  }
+  @mixin transition-timing-function($timing...) {
+    transition-timing-function: $timing;
+  }
+
+  // fit-crop-element
+  @mixin fit-crop-element() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-width: inherit;
+    min-height: inherit;
+    max-width: none;
+    width: auto;
+    height: auto;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      min-width: auto!important;
+      min-height: 100%!important;
+      max-width: none!important;
+      width: 100%!important;
+      height: auto!important;
+    }
+
+    @supports (object-fit: cover) {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      transform: none;
+    }
+  }
+
+  // Transparent Filter
+  @mixin filter($color: rgba(0, 0, 0, 0.4)) {
+    &:before {
+      content: ' ';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  // Add Slick Loader to Sliders
+  @mixin loaderSlick() {
+    position: relative;
+
+    &:before {
+      content: ' ';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $whiteColor;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }

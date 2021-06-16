@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Layout / Block Réassurance
+   ========================================================================== */
+
+  .blockreinsurance {
+    @include wrapper();
+
+    &-cards {
+      @include breakpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }

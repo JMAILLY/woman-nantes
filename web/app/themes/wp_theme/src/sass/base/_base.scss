@@ -1,0 +1,86 @@
+  /*-- RESET ALL --*/
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, font, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-weight:inherit;
+    font-style:inherit;
+    font-size:100%;
+    font-family:inherit;
+    vertical-align:baseline;
+  }
+
+  body {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $whiteColor;
+    font-family: $font-stack-common;
+    font-size: $base-font-size;
+    font-weight: 300;
+    line-height: $line-height;
+    overflow-x: hidden;
+  }
+
+  b, strong {
+    font-weight: 600;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  a {
+
+
+    &:hover {
+      @include transition(all $duration $easeInOutCirc);
+    }
+  }
+
+  /* Espacements entre les blocs */
+  .panel-grid-cell .so-panel {
+    margin-bottom: 50px!important;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 80px!important;
+    }
+
+    @include breakpoint(desktop) {
+      margin-bottom: 100px!important;
+    }
+  }
+
+  //a11y = accessibility
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+  }
+
+  .sr-only-focusable {
+    &:active,
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      clip-path: none;
+    }
+  }

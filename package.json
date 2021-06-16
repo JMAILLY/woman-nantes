@@ -1,0 +1,45 @@
+{
+  "name": "starter-pack",
+  "author": "Gingerminds",
+  "version": "1.0.0",
+  "description": "Starter Pack Wordpress",
+  "main": "gulfile.js",
+  "repository": {
+    "type": "git",
+    "url": "http://git.gingerminds.fr/dev-gm/starter-kit-wordpress"
+  },
+  "dependencies": {
+    "browser-sync": "latest",
+    "fs": "latest",
+    "gulp": "3.9.1",
+    "gulp-cache": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-file-include": "latest",
+    "gulp-image": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-open": "latest",
+    "gulp-real-favicon": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svgmin": "latest",
+    "gulp-svgstore": "latest",
+    "gulp-ttf2woff": "latest",
+    "gulp-ttf2woff2": "latest",
+    "gulp-uglify": "latest",
+    "require-dir": "latest"
+  },
+  "scripts": {
+    "init": "gulp init",
+    "develop": "gulp"
+  },
+  "devDependencies": {
+    "slick-carousel": "^1.8.1",
+    "svgxuse": "latest"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  }
+}

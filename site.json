@@ -1,0 +1,9 @@
+{
+  "title": "Scripts JS du site - Librairies et Scripts sur mesure",
+  "description": "",
+  "jsFiles": [
+    "./node_modules/svgxuse/svgxuse.js",
+    "./node_modules/slick-carousel/slick/slick.js",
+    "./web/app/themes/wp_theme/src/js/*.js"
+  ]
+}

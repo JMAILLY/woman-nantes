@@ -1,0 +1,51 @@
+/* ==========================================================================
+   STYLE DE L'EDITEUR DE TEXTE EN BACK OFFICE
+   ========================================================================== */
+
+    @font-face {
+        font-family: '';
+        src: url('') format('woff2'),
+        url('') format('woff');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    .mce-content-body {
+
+    }
+
+    .mce-content-body h1 {
+
+    }
+
+    .mce-content-body h2 {
+
+    }
+
+    .mce-content-body h3 {
+
+    }
+
+    .mce-content-body p {
+
+    }
+
+    .mce-content-body p + h3 {
+
+    }
+
+    .mce-content-body ul li {
+
+    }
+
+    .mce-content-body ul li:before {
+
+    }
+
+    .mce-content-body .btn-main {
+
+    }
+
+    .mce-content-body .btn-main:hover {
+
+    }

@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Components / Buttons
+   ========================================================================== */
+
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:focus {
+      outline-style: none;
+    }
+  }
+
+  .btn {
+    text-decoration: none;
+
+    &:focus {
+      outline-style: none;
+    }
+  }
+
+  .btn-main {
+
+  }

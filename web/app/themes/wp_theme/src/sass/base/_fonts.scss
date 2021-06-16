@@ -1,0 +1,14 @@
+
+  // Déclaration des fonts utilisées ici et qui ont été convertie par gulp dans le dossier build/assets/fonts en woff et woff2
+  // Copier coller le bout de code ci-dessous pour chaque police utilisée
+
+  @font-face {
+    font-family: 'Nom de la Police';
+    src: local('Nom de la Police'),
+    url('./fonts/nom_de_la_police.woff2') format('woff2'),
+    url('./fonts/nom_de_la_police.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+

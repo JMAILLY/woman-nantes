@@ -1,0 +1,76 @@
+variables:
+  DOCKER_IMAGE: gingerminds/docker-php-composer-node
+  # WP theme build.
+  WP_FOLDER: 'public_html'
+  WP_THEME_DIR: web/app/themes
+  # WP theme cleanup.
+  WP_THEME_DEL_DIRS: 'node_modules wep/app/themes/wp_theme/src'
+  WP_THEME_DEL_FILES: 'gulpfile.js site.json'
+
+stages:
+  - build
+  - deploy
+
+build_app:
+  stage: build
+  image: $DOCKER_IMAGE
+  only :
+    - master
+    - release
+  script:
+    - composer install --no-dev --optimize-autoloader
+    - npm ci
+    - gulp deploy
+    # Theme cleanup
+    - rm -rf $WP_THEME_DEL_DIRS
+    - rm -r $WP_THEME_DEL_FILES
+
+  artifacts:
+    name: "${CI_PROJECT_NAME}_${CI_COMMIT_REF_NAME}_${CI_JOB_ID}"
+    paths:
+      - config/
+      - web/
+    expire_in: 1 day
+
+deploy_staging:
+  stage: deploy
+  image: $DOCKER_IMAGE
+  only:
+    - release
+  environment:
+    name: release
+    url: http://$STAGING_URL
+  script:
+    # Préparation des paramètres SSH
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-add <(cat "$SSH_PRIVATE_KEY")
+    # Déploiement
+    # Copie des fichiers
+    - rsync -rlcDvzh --itemize-changes --delete --exclude-from=".rsyncignore" ./ $STAGING_SSH_HOST:~/public_html/
+    # Install WP
+    - ssh $STAGING_SSH_HOST "cd ~/public_html && composer install --no-dev --optimize-autoloader"
+    - scp $STAGING_ENV_FILE $STAGING_SSH_HOST:~/$WP_FOLDER/.env
+
+deploy_prod:
+  stage: deploy
+  image: $DOCKER_IMAGE
+  only:
+    - master
+  when: manual
+  environment:
+    name: prod
+    url: http://$PROD_URL
+  script:
+    # Préparation des paramètres SSH
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-add <(cat "$SSH_PRIVATE_KEY")
+    # Déploiement
+    # Copie des fichiers
+    - rsync -rlcDvzh --itemize-changes --delete --exclude-from=".rsyncignore" ./ $PROD_SSH_HOST:~/public_html/
+    # Install WP
+    - ssh $PROD_SSH_HOST "cd ~/public_html && composer install --no-dev --optimize-autoloader"
+    - scp $PROD_ENV_FILE $PROD_SSH_HOST:~/$WP_FOLDER/.env

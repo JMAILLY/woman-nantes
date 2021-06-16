@@ -1,0 +1,30 @@
+name: starterwprd
+recipe: wordpress
+config:
+  php: '7.3'
+  via: apache
+  webroot: web
+  database: mariadb
+proxy:
+  appserver:
+    - starterwprd.lndo.site
+  pma:
+    - pma.starterwprd.lndo.site
+services:
+  node:
+    type: node:10
+    globals:
+      gulp-cli: "latest"
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node
+  yarn:
+    service: node

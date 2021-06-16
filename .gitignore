@@ -1,0 +1,39 @@
+# Application
+web/app/plugins/*
+!/web/app/plugins/advanced-custom-fields-pro
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+
+# WordPress
+web/wp
+
+# Logs
+*.log
+/.idea
+
+# Dotenv
+.env
+
+# Composer
+vendor/
+
+# WP-CLI
+wp-cli.local.yml
+
+# Theme
+node_modules/
+.idea/
+web/app/themes/wp_theme/.idea/
+web/app/themes/wp_theme/images/
+web/app/themes/wp_theme/fonts/
+web/app/themes/wp_theme/node_modules/
+web/app/themes/wp_theme/theme-style.css
+web/app/themes/wp_theme/theme-style.css.map
+web/app/themes/wp_theme/script.min.js
+web/app/themes/wp_theme/script.min.js.map
+web/app/themes/wp_theme/yarn.lock
+web/app/themes/wp_theme/package-lock.json
+yarn.lock

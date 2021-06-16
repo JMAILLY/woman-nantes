@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Layout / Block Texte Simple
+   ========================================================================== */
+
+  .blocktext {
+    @include wrapper();
+
+    &-title {
+      display: block;
+      width: 100%;
+
+      &.aligntxt-left { text-align: left; }
+      &.aligntxt-right { text-align: right; }
+      &.aligntxt-center { text-align: center; }
+    }
+
+    &-text {
+
+    }
+  }

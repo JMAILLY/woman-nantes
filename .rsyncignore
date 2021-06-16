@@ -1,0 +1,10 @@
+/.rsyncignore
+/tests
+/.env*
+/.git*
+/phpunit.xml
+/README.md
+/vendor
+
+# WP directories
+/web/app/uploads

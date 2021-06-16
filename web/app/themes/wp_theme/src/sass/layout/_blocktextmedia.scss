@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Layout / Block Texte & Média
+   ========================================================================== */
+
+  .blocktextimg {
+    @include wrapper();
+
+    @include breakpoint(tablethor) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.alignimgright {
+      @include breakpoint(tablethor) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &-text {
+      @include breakpoint(tablethor) {
+        flex-basis: 50%;
+        width: 50%;
+      }
+    }
+
+    &-media {
+      display: block;
+      position: relative;
+
+      @include breakpoint(tablethor) {
+        flex-basis: 50%;
+        width: 50%;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: all $duration $easeInOutCubic;
+      }
+
+      .icon {
+        display: block;
+        fill: $whiteColor;
+        transition: all $duration $easeInOutCubic;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 1;
+      }
+
+      .youtube_player {
+        display: block;
+        position: relative;
+        padding-bottom: 56.25%;
+
+        iframe {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      &.has-video {
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+          display: block;
+          @include fit-crop-element();
+          z-index: 1;
+        }
+      }
+
+      &.showVideo {
+        img, .icon {
+          opacity: 0;
+          transition: all $duration $easeInOutCubic;
+          visibility: hidden;
+        }
+      }
+    }
+  }

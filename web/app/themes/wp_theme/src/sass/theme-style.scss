@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+// Base
+@import 'base/fonts';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/base';
+@import 'base/form';
+
+// Components
+@import 'components/button';
+@import 'components/titles';
+@import 'components/icons';
+@import 'components/card';
+@import 'components/wysiwyg';
+@import 'components/breadcrumb';
+@import 'components/tarteaucitron';
+@import 'components/slick';
+@import 'components/slick-theme';
+
+// Layout
+@import 'layout/navigation';
+@import 'layout/header';
+@import 'layout/blocktext';
+@import 'layout/blocktextmedia';
+@import 'layout/blockmedia';
+@import 'layout/blocktestimony';
+@import 'layout/blockreinsurance';
+@import 'layout/blockslider';
+@import 'layout/blockpush';
+@import 'layout/footer';
+
+// Pages
+@import 'pages/home';
